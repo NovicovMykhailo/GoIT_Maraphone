@@ -197,7 +197,6 @@ ul {
 }
 .image {
   width: 95vw;
-  max-width: 370px;
   margin-bottom: 20px;
   align-self: center;
 }
@@ -300,9 +299,7 @@ ul {
     width: 80vw;
     align-self: center;
   }
-  .Contact_Type {
-    display: none;
-  }
+
   .sidbar_title {
     font-size: 22px;
   }
@@ -314,20 +311,23 @@ ul {
     justify-content: space-evenly;
     flex-direction: row;
   }
-  .aside-container {
-    justify-content: flex-start;
-    width: fit-content;
+  .Contact_Type {
+    display: none;
+  }
+  .aside-container{
+    justify-content: space-between;
   }
   .Contacts {
     display: flex;
     flex-direction: column;
   }
   .Contacts > div {
-    justify-content: flex-start;
+    justify-content: space-around;
     width: 100%;
   }
   .image {
-    width: 100%;
+    max-width: 370px;
+  
   }
   .contacts-title {
     display: block;
