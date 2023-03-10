@@ -102,6 +102,7 @@ ul {
   font-size: 14px;
   line-height: 24px;
   color: #595959;
+  text-decoration: none;
 }
 .project-link {
   margin-left: 10px;
@@ -222,12 +223,13 @@ ul {
   font-style: normal;
 }
 .Contact_Links {
-  color: #565e6a;
+  color: #cbd3df;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   opacity: 0.5;
+  text-decoration: none;
 }
 /* Tech_Skills */
 
