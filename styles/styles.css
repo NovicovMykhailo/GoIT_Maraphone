@@ -1,6 +1,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
+  height: calc(100vh - calc(100vh - 100%));
 }
 
 body::-webkit-scrollbar {
@@ -23,26 +24,24 @@ ul {
 /* main styles */
 .main {
   display: flex;
-  flex-direction: row-reverse;
-  width: 1200px;
-  margin: 0 auto;
+  flex-direction: column-reverse;
+  gap: 30px;
+  justify-content: center;
   background-color: #ffffff;
+  padding: 0 20px 40px 20px;
 }
 
 /* MainContent*/
 
 .MainContent {
   background-color: #ffffff;
-  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
-  padding: 105px 90px 90px 90px;
+  /* width: 100vw; */
 }
 
 /* about styles */
 
 .about {
-  width: 400px;
-  height: 230px;
-  margin-bottom: 40px;
+  margin-bottom: 10vw;
 }
 
 .about-position {
@@ -50,23 +49,21 @@ ul {
   color: #000000;
   font-style: bold;
   line-height: 17px;
-  margin-bottom: 20px;
+  margin-bottom: 1vw;
 }
 .about-Name {
-  font-size: 45px;
+  font-size: 39px;
   color: #000000;
-  font-style: bold;
+  font-weight: 800;
   line-height: 55px;
-  margin-bottom: 25px;
+  margin-bottom: 2vw;
 }
 
 .about-description {
   color: #595959;
   font-size: 14px;
-  font-style: bold;
   line-height: 24px;
-
-  width: 400px;
+  text-align: justify;
 }
 
 /* project styles */
@@ -76,12 +73,11 @@ ul {
   font-size: 22px;
   line-height: 27px;
   color: #000000;
-
   margin-bottom: 10px;
 }
 
 .projects {
-  margin-bottom: 50px;
+  margin-bottom: 10vw;
 }
 .project-item,
 .project-breckets {
@@ -91,9 +87,12 @@ ul {
   line-height: 24px;
   color: #000000;
 }
-.project_list {
-  padding-left: 17px;
-  width: 475px;
+.project {
+  text-align: justify;
+}
+
+.project-breckets {
+  display: none;
 }
 .project,
 .project-link {
@@ -107,11 +106,13 @@ ul {
 .project-link {
   margin-left: 10px;
 }
-
+.project_list {
+  padding-left: 20px;
+}
 /* Work styles */
 
 .work {
-  margin-bottom: 45px;
+  margin-bottom: 10vw;
 }
 .company_1,
 .Company_2,
@@ -188,32 +189,51 @@ ul {
 
 .sidebar {
   background-color: #1e2939;
+  width: calc(100vw + 40px);
   padding-top: 40px;
-  width: 370px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 .image {
-  width: 370px;
-  height: 354px;
-  margin-bottom: 50px;
-  /* margin-top: 40px; */
+  width: 95vw;
+  max-width: 370px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.aside-container {
+  display: flex;
+  justify-content: space-around;
 }
 .sidbar_title {
+  display: inline-block;
   color: #ffffff;
   font-style: normal;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 27px;
   margin-bottom: 10px;
 }
-.Contacts,
-.Tech_Skills,
-.Soft_Skils {
-  margin-left: 40px;
+.contacts-title {
+  display: none;
 }
+
 .Contacts {
-  margin-bottom: 50px;
+  display: inline-block;
+  margin-bottom: 4vw;
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  align-self: center;
 }
+.aside-positioning {
+  display: flex;
+  flex-direction: column;
+}
+
 .Contact_Type {
+  display: inline;
   color: #ffffff;
   font-style: normal;
   font-weight: bold;
@@ -222,6 +242,7 @@ ul {
   margin-right: 10px;
   font-style: normal;
 }
+
 .Contact_Links {
   color: #cbd3df;
   font-style: normal;
@@ -265,4 +286,145 @@ ul {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+}
+
+@media screen and (min-width: 375px) {
+  .Contacts {
+    margin-bottom: 20px;
+  }
+  .Contacts > div {
+    display: flex;
+    flex-direction: row;
+    gap: 7vw;
+    justify-content: space-around;
+    width: 80vw;
+    align-self: center;
+  }
+  .Contact_Type {
+    display: none;
+  }
+  .sidbar_title {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .sidebar {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+  .aside-container {
+    justify-content: flex-start;
+    width: fit-content;
+  }
+  .Contacts {
+    display: flex;
+    flex-direction: column;
+  }
+  .Contacts > div {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .image {
+    width: 100%;
+  }
+  .contacts-title {
+    display: block;
+  }
+
+  .about,
+  .projects,
+  .work {
+    margin-bottom: 40px;
+  }
+
+  .project-breckets {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    margin: 0 auto;
+    gap: 0;
+    flex-direction: row-reverse;
+    width: 1200px;
+    padding: 0;
+  }
+
+  .MainContent {
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 105px 90px 90px 90px;
+  }
+  .about {
+    width: 400px;
+    height: 230px;
+    margin-bottom: 40px;
+  }
+  .about-position {
+    margin-bottom: 20px;
+  }
+  .about-Name {
+    font-size: 45px;
+    line-height: 55px;
+    margin-bottom: 25px;
+  }
+  .about-description {
+    width: 400px;
+  }
+  .projects {
+    margin-bottom: 50px;
+  }
+  .project_list {
+    padding-left: 17px;
+    width: 475px;
+  }
+  .project {
+    display: block;
+  }
+  .project-breckets {
+    display: inline;
+  }
+  .work {
+    margin-bottom: 45px;
+  }
+
+  .sidebar {
+    width: 370px;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-bottom: calc(1304px - 961px);
+  }
+  .aside-container {
+    display: block;
+    width: 370px;
+  }
+  .Contacts,
+  .Tech_Skills,
+  .Soft_Skils {
+    padding-left: 40px;
+  }
+  .Contacts {
+    display: inline-block;
+    margin-bottom: 50px;
+    align-self: start;
+  }
+  .Contacts > div {
+    display: block;
+    padding-left: 0;
+  }
+  .image {
+    margin-bottom: 50px;
+  }
+  .Contact_Type {
+    display: inline;
+  }
+
+  .project_list {
+    padding-left: 17px;
+    width: 475px;
+  }
+
+
 }
